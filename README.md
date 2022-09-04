@@ -4,7 +4,7 @@ This repository will be used to keep track of notes and code samples while creat
 
 1. We'll first want to create a directory for our DAPP. 
 
-2. Now, we cd into that directory and run the command 'truffle init'
+2. Now, we cd into that directory and run the command 'truffle init'.
 *If running into any errors related to running scripts, you'll need to enable script running for the system*
 
 3. Once truffle has been initialized, the folders 'contracts', 'migrations', and 'test' will be added to the directory, along with a file 'truffle-config.js'.
