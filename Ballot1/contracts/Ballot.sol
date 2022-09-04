@@ -43,9 +43,9 @@ contract Ballot {
 
     function winningProposal() view public returns (uint8 _winningProposal) {
         uint256 winningVoteCount = 0;
-        for (uint8 prop = 0; prop < proposals.length; prop++)
-            if (proposals[prop].voteCount > winningVoteCount) {
-                winningVoteCount = proposals[prop].voteCount;
+        for (uint8 prop = 0; prop < 4; prop++)
+            if (proposals[prop] > winningVoteCount) {
+                winningVoteCount = proposals[prop];
                 _winningProposal = prop;
             }
     }
