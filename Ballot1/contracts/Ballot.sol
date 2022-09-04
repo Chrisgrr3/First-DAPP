@@ -23,4 +23,12 @@ contract Ballot {
         chairperson = msg.sender;
         voters[chairperson].weight = 2;
     }
+
+    // Give $(toVoter) the right to vote on this ballot.
+    // May only be called by $(chairperson)
+    function register(address toVoter) public onlyOwner {
+        if(voters[toVoter].weight != 0) revert();
+        voters[toVoter].weight = 1;
+        voters[toVoter].voted = false;
+    }
 }
