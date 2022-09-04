@@ -25,3 +25,12 @@ module.exports = {
         }
     }
 };
+
+7. Head to the ballot home directory (root directory for the project) and run the command 'truffle develop' to deploy a local test blockchain with ten account addresses. It'll also display seed words while linking these accounts into a wallet or Metamask that we'll use later. Copy the words into a file so that they can be used later.
+
+8. Add a file to the migrations directory to deploy our smart contract. Create a file named 2_deploy_contracts.js and add the below content to the file:
+
+var Ballot = artifacts.require("Ballot");
+module.exports = function(deployer) {
+    deployer.deploy(Ballot);
+}
