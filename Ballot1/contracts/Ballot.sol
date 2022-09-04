@@ -31,4 +31,13 @@ contract Ballot {
         voters[toVoter].weight = 1;
         voters[toVoter].voted = false;
     }
+
+    // Give a single vote to proposal $(toProposal)
+    function vote(uint8 toProposal) public {
+        Voter storage sender = voters[msg.sender];
+        if (sender.voted || toProposal >= 4 || sender.weight == 0) revert();
+        sender.voted = true;
+        sender.vote = toProposal;
+        proposals[toProposal] += sender.weight;
+    }
 }
