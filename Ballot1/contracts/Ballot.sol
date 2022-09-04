@@ -17,4 +17,10 @@ contract Ballot {
     address public chairperson;
     mapping(address => Voter) public voters;
     uint[4] public proposals;
+
+    // Create a new ballot with 4 different proposals.
+    function Ballot() public {
+        chairperson = msg.sender;
+        voters[chairperson].weight = 2;
+    }
 }
