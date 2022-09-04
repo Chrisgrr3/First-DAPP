@@ -19,7 +19,7 @@ contract Ballot {
     uint[4] public proposals;
 
     // Create a new ballot with 4 different proposals.
-    function Ballot() public {
+    constructor() public {
         chairperson = msg.sender;
         voters[chairperson].weight = 2;
     }
